@@ -2,7 +2,7 @@ name: Container image build and push
 
 on:
   push:
-    branches: [ master ]
+    branches: [ artifacts-with-dockerhub ]
 
 jobs:
   docker:
@@ -32,3 +32,4 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ vars.DOCKER_REPOSITORY_NAME }}:${{ env.SHA }}-${{ env.DATE }}
+#1.1
